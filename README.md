@@ -15,6 +15,13 @@
                   └─ gzip + 静态资源 immutable 缓存，4G 首屏更快
 ```
 
+## 手机端长什么样
+
+![键盘弹出时的前后对比](docs/mobile-keyboard.png)
+
+> 左：适配前（真机截图）——键盘弹起时输入框飘在屏幕中间，和键盘之间空出一大块，聊天内容被挤到看不见。
+> 右：适配后（键盘高度按 560px 模拟）——输入框贴着键盘上沿，上方仍是聊天内容；正文宽度也从 325px 变成 389px。
+
 ## 特性
 
 - **一条命令装好**：文件、口令、防火墙、开机自启、启动自检一次完成，最后直接打印手机能打开的地址。
@@ -132,6 +139,8 @@ dsh-phone-bridge/
 │     ├─ architecture.md        原理与关键实现
 │     ├─ tailscale.md           Tailscale 组网与打洞
 │     └─ troubleshooting.md     故障排查手册
+├─ docs/
+│  └─ mobile-keyboard.png       手机端适配前后对比图
 ├─ LICENSE
 └─ README.md
 ```
