@@ -36,7 +36,7 @@
 ## 快速开始
 
 ```powershell
-git clone https://github.com/你的用户名/dsh-phone-bridge.git
+git clone https://github.com/sanhe-liu/dsh-phone-bridge.git
 cd dsh-phone-bridge
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
