@@ -1,0 +1,41 @@
+/*
+ * 手机端适配（bridge3 注入：<link rel="stylesheet" href="/__mobile.css?v=3">）
+ * 目标机型：412×915 Android（Edge/Chrome），<=900px 生效。
+ * 目标：
+ *   1. 聊天内容和输入框尽量吃满屏幕宽度（左右各留 6~8px）；
+ *   2. 键盘弹出时整块布局跟着缩，输入框贴住键盘上沿，不留大片死区；
+ *   3. 长代码/表格在容器内横向滚动，不撑破页面。
+ * 注意：下面的类名（an3WzG_/V4vHZW_/GRgSLq_/mP3x-q_）是 DSH 前端构建产物里的 hash 类名，
+ * DSH 升级后如果样式失效，先重新取一份 HTML/JS 核对类名。
+ */
+@media (max-width: 900px) {
+  html, body {
+    height: var(--dsh-mobile-vh, 100%) !important; /* 兜底：老浏览器由注入脚本设置可视高度 */
+    overflow: hidden !important;
+    max-width: 100vw !important;
+    overscroll-behavior-x: none !important;
+    -webkit-text-size-adjust: 100% !important;
+  }
+  body { zoom: 1 !important; } /* 原先的 0.95 缩放白丢 21px 宽度，还让高度换算变形 */
+
+  :where(main, section, article, aside, header, footer, div, ul, ol, li) { min-width: 0 !important; }
+  pre, table, img, video, canvas, svg { max-width: 100% !important; }
+  pre, table { overflow-x: auto !important; }
+
+  /* 聊天区：宽度吃满 */
+  .an3WzG_body {
+    --dsh-chat-content-width: 100%;
+    --dsh-composer-card-max-width: 100%;
+    --dsh-composer-side-clearance: 6px;
+  }
+  .V4vHZW_scroll, .SNx2jG_slot { padding-left: 8px !important; padding-right: 8px !important; }
+  .V4vHZW_column { max-width: 100% !important; }
+
+  /* 顶栏和输入区：减少左右留白 */
+  .an3WzG_header { padding-left: 6px !important; padding-right: 10px !important; }
+  .GRgSLq_root, .GRgSLq_hero { padding-left: 6px !important; padding-right: 6px !important; }
+  .an3WzG_composerHero { padding-bottom: 12px; }
+
+  /* 外框高度跟着可视区走，键盘弹出时一起缩 */
+  .mP3x-q_frame { height: 100% !important; }
+}

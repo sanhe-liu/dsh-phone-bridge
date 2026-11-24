@@ -1,0 +1,17 @@
+# 运行时产物（由 setup.ps1 / bridge.mjs 生成）
+bridge.pass.txt
+bridge.pid
+bridge.out.log
+bridge.err.log
+bridge-auth.log
+phone-url.txt
+手机地址.txt
+
+# 手机安装包（体积大，按需自备）
+apk/*.apk
+
+# 依赖与临时文件
+node_modules/
+*.tmp
+.DS_Store
+Thumbs.db
